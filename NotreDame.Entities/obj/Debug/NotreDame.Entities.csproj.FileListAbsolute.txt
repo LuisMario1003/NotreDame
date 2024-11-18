@@ -1,0 +1,6 @@
+C:\Users\HEWLETT PACKARD\Desktop\Programacion3\NotreDame\NotreDame.Entities\bin\Debug\NotreDame.Entities.dll
+C:\Users\HEWLETT PACKARD\Desktop\Programacion3\NotreDame\NotreDame.Entities\bin\Debug\NotreDame.Entities.pdb
+C:\Users\HEWLETT PACKARD\Desktop\Programacion3\NotreDame\NotreDame.Entities\obj\Debug\NotreDame.Entities.csproj.AssemblyReference.cache
+C:\Users\HEWLETT PACKARD\Desktop\Programacion3\NotreDame\NotreDame.Entities\obj\Debug\NotreDame.Entities.csproj.CoreCompileInputs.cache
+C:\Users\HEWLETT PACKARD\Desktop\Programacion3\NotreDame\NotreDame.Entities\obj\Debug\NotreDame.Entities.dll
+C:\Users\HEWLETT PACKARD\Desktop\Programacion3\NotreDame\NotreDame.Entities\obj\Debug\NotreDame.Entities.pdb
