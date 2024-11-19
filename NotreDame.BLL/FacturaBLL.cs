@@ -27,9 +27,19 @@ namespace NotreDame.BLL
             return _facturaDAL.ObtenerFacturas();
         }
 
+        //public Factura ObtenerFacturaPorId(int facturaID)
+        //{
+        //    return _facturaDAL.ObtenerFacturaPorId(facturaID);
+        //}
+
         public Factura ObtenerFacturaPorId(int facturaID)
         {
-            return _facturaDAL.ObtenerFacturaPorId(facturaID);
+            Factura factura = _facturaDAL.ObtenerFacturaPorId(facturaID);
+            if (factura != null)
+            {
+                factura.ServiciosAdicionales = _facturaDAL.ObtenerServiciosAdicionalesPorFacturaId(facturaID);
+            }
+            return factura;
         }
 
         public void ActualizarFactura(Factura factura, List<int> serviciosSeleccionados)

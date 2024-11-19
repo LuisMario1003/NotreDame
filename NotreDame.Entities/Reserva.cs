@@ -15,5 +15,9 @@ namespace NotreDame.Entities
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFin { get; set; }
         public decimal MontoTotal { get; set; }
+        public Cliente Cliente { get; set; }
+        public Habitacion Habitacion { get; set; }
+        public List<ServicioAdicional> ServiciosAdicionales { get; set; } // Asegúrate de obtener esta lista en el DAL
+
     }
 }

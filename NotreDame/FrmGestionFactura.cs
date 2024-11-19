@@ -1,4 +1,10 @@
-﻿using NotreDame.BLL;
+﻿using iText.IO.Font.Constants;
+using iText.Kernel.Font;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
+using iText.Layout.Properties;
+using NotreDame.BLL;
 using NotreDame.Entities;
 using System;
 using System.Collections.Generic;
@@ -9,6 +15,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace NotreDame
 {
@@ -307,5 +314,134 @@ namespace NotreDame
         {
             label3.ForeColor= Color.Black;
         }
+        // Método para exportar la factura seleccionada a PDF
+        //private void ExportarFacturaSeleccionadaAPdf(string archivo)
+        //{
+        //    if (dgvFacturas.SelectedRows.Count == 0)
+        //    {
+        //        MessageBox.Show("Por favor, seleccione una factura para exportar.");
+        //        return;
+        //    }
+
+        //    int facturaID = Convert.ToInt32(dgvFacturas.SelectedRows[0].Cells["FacturaID"].Value);
+        //    Factura factura = _facturaBLL.ObtenerFacturaPorId(facturaID);
+
+        //    using (var writer = new PdfWriter(archivo))
+        //    {
+        //        using (var pdf = new PdfDocument(writer))
+        //        {
+        //            var document = new Document(pdf);
+
+        //            // Definir estilos de fuente
+        //            var bold = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
+        //            var normal = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
+
+        //            // Título del documento
+        //            document.Add(new Paragraph("Factura").SetTextAlignment(TextAlignment.CENTER).SetFontSize(20).SetFont(bold));
+
+        //            document.Add(new Paragraph($"Código de Factura: {factura.CodigoFactura}")
+        //                .SetFontSize(14)
+        //                .SetFont(bold));
+
+        //            document.Add(new Paragraph($"ID de Reserva: {factura.ReservaID}")
+        //                .SetFontSize(12)
+        //                .SetFont(normal));
+
+        //            document.Add(new Paragraph($"Fecha: {factura.Fecha}")
+        //                .SetFontSize(12)
+        //                .SetFont(normal));
+
+        //            document.Add(new Paragraph($"Monto Total: {factura.MontoTotal:C}")
+        //                .SetFontSize(12)
+        //                .SetFont(normal));
+        //        }
+        //    }
+
+        //    MessageBox.Show("Factura exportada exitosamente a PDF.");
+        //}
+
+        private void ExportarFacturaSeleccionadaAPdf(string archivo)
+        {
+            if (dgvFacturas.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Por favor, seleccione una factura para exportar.");
+                return;
+            }
+
+            int facturaID = Convert.ToInt32(dgvFacturas.SelectedRows[0].Cells["FacturaID"].Value);
+            Factura factura = _facturaBLL.ObtenerFacturaPorId(facturaID);
+
+            using (var writer = new PdfWriter(archivo))
+            {
+                using (var pdf = new PdfDocument(writer))
+                {
+                    var document = new Document(pdf);
+
+                    var bold = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
+                    var normal = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
+
+                    document.Add(new Paragraph("Factura NotreDame").SetTextAlignment(TextAlignment.CENTER).SetFontSize(20).SetFont(bold));
+
+                    document.Add(new Paragraph($"Código de Factura: {factura.CodigoFactura}").SetFontSize(14).SetFont(bold));
+                    document.Add(new Paragraph($"Fecha: {factura.Fecha}").SetFontSize(12).SetFont(normal));
+                    document.Add(new Paragraph($"Monto Total: {factura.MontoTotal:C}").SetFontSize(12).SetFont(normal));
+
+                    document.Add(new Paragraph("Información del Cliente").SetFontSize(14).SetFont(bold));
+                    document.Add(new Paragraph($"Nombre: {factura.Cliente.Nombre}").SetFontSize(12).SetFont(normal));
+                    document.Add(new Paragraph($"Teléfono: {factura.Cliente.Telefono}").SetFontSize(12).SetFont(normal));
+                    document.Add(new Paragraph($"Género: {factura.Cliente.Genero}").SetFontSize(12).SetFont(normal));
+                    document.Add(new Paragraph($"Cédula: {factura.Cliente.Cedula}").SetFontSize(12).SetFont(normal));
+
+                    document.Add(new Paragraph("Información de la Habitación").SetFontSize(14).SetFont(bold));
+                    document.Add(new Paragraph($"Código de Habitación: {factura.Habitacion.CodigoHabitacion}").SetFontSize(12).SetFont(normal));
+                    document.Add(new Paragraph($"Número: {factura.Habitacion.Numero}").SetFontSize(12).SetFont(normal));
+                    document.Add(new Paragraph($"Estado: {factura.Habitacion.Estado}").SetFontSize(12).SetFont(normal));
+                    document.Add(new Paragraph($"Categoría: {factura.Habitacion.Categoria.Nombre}").SetFontSize(12).SetFont(normal));
+
+                    document.Add(new Paragraph("Servicios Adicionales").SetFontSize(14).SetFont(bold));
+                    if (factura.ServiciosAdicionales != null && factura.ServiciosAdicionales.Count > 0)
+                    {
+                        foreach (var servicio in factura.ServiciosAdicionales)
+                        {
+                            document.Add(new Paragraph($"{servicio.Nombre}: {servicio.Precio:C}").SetFontSize(12).SetFont(normal));
+                        }
+                    }
+                    else
+                    {
+                        document.Add(new Paragraph("No se añadieron servicios adicionales.").SetFontSize(12).SetFont(normal));
+                    }
+                }
+            }
+
+            MessageBox.Show("Factura exportada exitosamente a PDF.");
+        }
+
+        private void btnExportarFacturaPdf_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "PDF files (*.pdf)|*.pdf";
+                saveFileDialog.Title = "Guardar Factura como PDF";
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    ExportarFacturaSeleccionadaAPdf(saveFileDialog.FileName);
+                }
+            }
+        }
+
+
+        //private void btnExportarFacturaPdf_Click(object sender, EventArgs e)
+        //{
+        //    using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+        //    {
+        //        saveFileDialog.Filter = "PDF files (*.pdf)|*.pdf";
+        //        saveFileDialog.Title = "Guardar Factura como PDF";
+        //        if (saveFileDialog.ShowDialog() == DialogResult.OK)
+        //        {
+        //            ExportarFacturaSeleccionadaAPdf(saveFileDialog.FileName);
+        //        }
+        //    }
+        //}
+
     }
 }

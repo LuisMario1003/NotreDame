@@ -13,6 +13,10 @@ namespace NotreDame.Entities
         public int ReservaID { get; set; }
         public DateTime Fecha { get; set; }
         public decimal MontoTotal { get; set; }
+        public Cliente Cliente { get; set; }
+        public Habitacion Habitacion { get; set; }
+        public List<ServicioAdicional> ServiciosAdicionales { get; set; } // Asegúrate de obtener esta lista en el DAL
+
 
     }
 }
