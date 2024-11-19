@@ -95,3 +95,4 @@ C:\Users\HEWLETT PACKARD\Desktop\Programacion3\NotreDame\NotreDame\bin\Debug\Sys
 C:\Users\HEWLETT PACKARD\Desktop\Programacion3\NotreDame\NotreDame\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\HEWLETT PACKARD\Desktop\Programacion3\NotreDame\NotreDame\bin\Debug\itext.bouncy-castle-adapter.dll
 C:\Users\HEWLETT PACKARD\Desktop\Programacion3\NotreDame\NotreDame\bin\Debug\itext.bouncy-castle-adapter.xml
+C:\Users\HEWLETT PACKARD\Desktop\Programacion3\NotreDame\NotreDame\obj\Debug\NotreDame.FrmLogin.resources
