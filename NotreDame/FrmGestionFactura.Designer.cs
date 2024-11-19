@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGestionFactura));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -60,6 +60,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvFacturas = new System.Windows.Forms.DataGridView();
             this.btnExportarFacturaPdf = new System.Windows.Forms.Button();
+            this.txtBuscarCodigoFactura = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -305,7 +306,7 @@
             this.btnEliminarFactura.BackColor = System.Drawing.Color.Goldenrod;
             this.btnEliminarFactura.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminarFactura.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarFactura.Location = new System.Drawing.Point(576, 180);
+            this.btnEliminarFactura.Location = new System.Drawing.Point(462, 172);
             this.btnEliminarFactura.Name = "btnEliminarFactura";
             this.btnEliminarFactura.Size = new System.Drawing.Size(119, 36);
             this.btnEliminarFactura.TabIndex = 63;
@@ -318,7 +319,7 @@
             this.btnAgregarFactura.BackColor = System.Drawing.Color.Goldenrod;
             this.btnAgregarFactura.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAgregarFactura.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarFactura.Location = new System.Drawing.Point(325, 180);
+            this.btnAgregarFactura.Location = new System.Drawing.Point(212, 173);
             this.btnAgregarFactura.Name = "btnAgregarFactura";
             this.btnAgregarFactura.Size = new System.Drawing.Size(119, 36);
             this.btnAgregarFactura.TabIndex = 62;
@@ -331,7 +332,7 @@
             this.btnEditarFactura.BackColor = System.Drawing.Color.Goldenrod;
             this.btnEditarFactura.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEditarFactura.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarFactura.Location = new System.Drawing.Point(451, 180);
+            this.btnEditarFactura.Location = new System.Drawing.Point(337, 173);
             this.btnEditarFactura.Name = "btnEditarFactura";
             this.btnEditarFactura.Size = new System.Drawing.Size(119, 36);
             this.btnEditarFactura.TabIndex = 61;
@@ -393,28 +394,28 @@
             // 
             // dgvFacturas
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Silver;
-            this.dgvFacturas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Silver;
+            this.dgvFacturas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvFacturas.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvFacturas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFacturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFacturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DarkGray;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkGray;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvFacturas.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFacturas.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvFacturas.EnableHeadersVisualStyles = false;
             this.dgvFacturas.Location = new System.Drawing.Point(175, 228);
             this.dgvFacturas.Name = "dgvFacturas";
@@ -435,12 +436,28 @@
             this.btnExportarFacturaPdf.UseVisualStyleBackColor = false;
             this.btnExportarFacturaPdf.Click += new System.EventHandler(this.btnExportarFacturaPdf_Click);
             // 
+            // txtBuscarCodigoFactura
+            // 
+            this.txtBuscarCodigoFactura.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtBuscarCodigoFactura.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBuscarCodigoFactura.Font = new System.Drawing.Font("Microsoft Uighur", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscarCodigoFactura.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtBuscarCodigoFactura.Location = new System.Drawing.Point(606, 173);
+            this.txtBuscarCodigoFactura.Multiline = true;
+            this.txtBuscarCodigoFactura.Name = "txtBuscarCodigoFactura";
+            this.txtBuscarCodigoFactura.Size = new System.Drawing.Size(193, 33);
+            this.txtBuscarCodigoFactura.TabIndex = 71;
+            this.txtBuscarCodigoFactura.Tag = "";
+            this.txtBuscarCodigoFactura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBuscarCodigoFactura.TextChanged += new System.EventHandler(this.txtBuscarCodigoFactura_TextChanged);
+            // 
             // FrmGestionFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(934, 456);
+            this.Controls.Add(this.txtBuscarCodigoFactura);
             this.Controls.Add(this.btnExportarFacturaPdf);
             this.Controls.Add(this.dgvFacturas);
             this.Controls.Add(this.label1);
@@ -506,5 +523,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Button btnExportarFacturaPdf;
+        private System.Windows.Forms.TextBox txtBuscarCodigoFactura;
     }
 }

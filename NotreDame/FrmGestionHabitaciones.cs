@@ -23,78 +23,11 @@ namespace NotreDame
             CargarCategorias();
             CargarHabitaciones();
         }
-        //private void btnGuardarHabitacion_Click(object sender, EventArgs e)
-        //{
-        //    Habitacion habitacion = new Habitacion
-        //    {
-        //        CodigoHabitacion = txtCodigoHabitacion.Text,
-        //        Numero = txtNumero.Text,
-        //        Estado = cbEstado.SelectedItem.ToString(),
-        //        CategoriaID = (int)cbCategoria.SelectedValue
-        //    };
-        //    _habitacionBLL.RegistrarHabitacion(habitacion);
-        //    MessageBox.Show("Habitación registrada exitosamente.");
-        //    CargarHabitaciones();
-        //}
-
-        //private void btnEditarHabitacion_Click(object sender, EventArgs e)
-        //{
-        //    if (dgvHabitaciones.SelectedRows.Count > 0)
-        //    {
-        //        int habitacionID = Convert.ToInt32(dgvHabitaciones.SelectedRows[0].Cells["HabitacionID"].Value);
-        //        Habitacion habitacion = new Habitacion
-        //        {
-        //            HabitacionID = habitacionID,
-        //            CodigoHabitacion = txtCodigoHabitacion.Text,
-        //            Numero = txtNumero.Text,
-        //            Estado = cbEstado.SelectedItem.ToString(),
-        //            CategoriaID = (int)cbCategoria.SelectedValue
-        //        };
-        //        _habitacionBLL.ActualizarHabitacion(habitacion);
-        //        MessageBox.Show("Habitación actualizada exitosamente.");
-        //        CargarHabitaciones();
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Por favor, seleccione una habitación para editar.");
-        //    }
-        //}
-
-        //private void btnEliminarHabitacion_Click(object sender, EventArgs e)
-        //{
-        //    if (dgvHabitaciones.SelectedRows.Count > 0)
-        //    {
-        //        int habitacionID = Convert.ToInt32(dgvHabitaciones.SelectedRows[0].Cells["HabitacionID"].Value);
-        //        _habitacionBLL.EliminarHabitacion(habitacionID);
-        //        MessageBox.Show("Habitación eliminada exitosamente.");
-        //        CargarHabitaciones();
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Por favor, seleccione una habitación para eliminar.");
-        //    }
-        //}
-
         private void CargarHabitaciones()
         {
             DataTable habitacionesTable = _habitacionBLL.ObtenerHabitaciones(); // Suponiendo que ObtenerHabitaciones devuelva un DataTable
             dgvHabitaciones.DataSource = habitacionesTable;
         }
-
-        //private void CargarHabitaciones()
-        //{
-        //    //dgvHabitaciones.DataSource = _habitacionBLL.ObtenerHabitaciones();
-        //    dgvHabitaciones.DataSource = _habitacionBLL.ObtenerHabitaciones();
-        //    dgvHabitaciones.Columns["HabitacionID"].Visible = false; // Oculta el ID de la habitación
-        //    dgvHabitaciones.Columns["CategoriaID"].Visible = false; // Oculta el ID de la categoría
-        //    dgvHabitaciones.Columns["Categoria"].Visible = false; // Oculta la propiedad de categoría completa
-        //    dgvHabitaciones.Columns["CodigoHabitacion"].HeaderText = "Código de Habitación";
-        //    dgvHabitaciones.Columns["Numero"].HeaderText = "Número de Habitación";
-        //    dgvHabitaciones.Columns["Estado"].HeaderText = "Estado";
-        //    dgvHabitaciones.Columns["CategoriaNombre"].HeaderText = "Categoría";
-
-        //}
-
         private void CargarCategorias()
         {
             cbCategoria.DataSource = _categoriaBLL.ObtenerCategorias();

@@ -25,54 +25,6 @@ namespace NotreDame
         {
 
         }
-        //private void btnAgregarCategoria_Click(object sender, EventArgs e)
-        //{
-        //    Categoria categoria = new Categoria
-        //    {
-        //        Nombre = txtNombre.Text,
-        //        Precio = decimal.Parse(txtPrecio.Text)
-        //    };
-        //    _categoriaBLL.RegistrarCategoria(categoria);
-        //    MessageBox.Show("Categoría registrada exitosamente.");
-        //    CargarCategorias();
-        //}
-
-        //private void btnEditarCategoria_Click(object sender, EventArgs e)
-        //{
-        //    if (dgvCategorias.SelectedRows.Count > 0)
-        //    {
-        //        int categoriaID = Convert.ToInt32(dgvCategorias.SelectedRows[0].Cells["CategoriaID"].Value);
-        //        Categoria categoria = new Categoria
-        //        {
-        //            CategoriaID = categoriaID,
-        //            Nombre = txtNombre.Text,
-        //            Precio = decimal.Parse(txtPrecio.Text)
-        //        };
-        //        _categoriaBLL.ActualizarCategoria(categoria);
-        //        MessageBox.Show("Categoría actualizada exitosamente.");
-        //        CargarCategorias();
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Por favor, seleccione una categoría para editar.");
-        //    }
-        //}
-
-        //private void btnEliminarCategoria_Click(object sender, EventArgs e)
-        //{
-        //    if (dgvCategorias.SelectedRows.Count > 0)
-        //    {
-        //        int categoriaID = Convert.ToInt32(dgvCategorias.SelectedRows[0].Cells["CategoriaID"].Value);
-        //        _categoriaBLL.EliminarCategoria(categoriaID);
-        //        MessageBox.Show("Categoría eliminada exitosamente.");
-        //        CargarCategorias();
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Por favor, seleccione una categoría para eliminar.");
-        //    }
-        //}
-
         private void CargarCategorias()
         {
             dgvCategorias.DataSource = _categoriaBLL.ObtenerCategorias();

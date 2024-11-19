@@ -25,60 +25,6 @@ namespace NotreDame
             CargarReservas();
             CargarClientes();
         }
-        //private void btnGuardarReserva_Click(object sender, EventArgs e)
-        //{
-        //    Reserva reserva = new Reserva
-        //    {
-        //        CodigoReserva = txtCodigoReserva.Text,
-        //        ClienteID = (int)cbCliente.SelectedValue,
-        //        HabitacionID = (int)cbHabitacion.SelectedValue,
-        //        FechaInicio = dtpFechaInicio.Value,
-        //        FechaFin = dtpFechaFin.Value
-        //    };
-        //    _reservaBLL.RegistrarReserva(reserva);
-        //    MessageBox.Show("Reserva registrada exitosamente.");
-        //    CargarReservas();
-        //}
-
-        //private void btnEditarReserva_Click(object sender, EventArgs e)
-        //{
-        //    if (dgvReservas.SelectedRows.Count > 0)
-        //    {
-        //        int reservaID = Convert.ToInt32(dgvReservas.SelectedRows[0].Cells["ReservaID"].Value);
-        //        Reserva reserva = new Reserva
-        //        {
-        //            ReservaID = reservaID,
-        //            CodigoReserva = txtCodigoReserva.Text,
-        //            ClienteID = (int)cbCliente.SelectedValue,
-        //            HabitacionID = (int)cbHabitacion.SelectedValue,
-        //            FechaInicio = dtpFechaInicio.Value,
-        //            FechaFin = dtpFechaFin.Value
-        //        };
-        //        _reservaBLL.ActualizarReserva(reserva);
-        //        MessageBox.Show("Reserva actualizada exitosamente.");
-        //        CargarReservas();
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Por favor, seleccione una reserva para editar.");
-        //    }
-        //}
-
-        //private void btnEliminarReserva_Click(object sender, EventArgs e)
-        //{
-        //    if (dgvReservas.SelectedRows.Count > 0)
-        //    {
-        //        int reservaID = Convert.ToInt32(dgvReservas.SelectedRows[0].Cells["ReservaID"].Value);
-        //        _reservaBLL.EliminarReserva(reservaID);
-        //        MessageBox.Show("Reserva eliminada exitosamente.");
-        //        CargarReservas();
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Por favor, seleccione una reserva para eliminar.");
-        //    }
-        //}
-
         private void CargarReservas()
         {
             dgvReservas.DataSource = _reservaBLL.ObtenerReservas();

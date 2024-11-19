@@ -2,6 +2,7 @@
 using NotreDame.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,16 +23,10 @@ namespace NotreDame.BLL
             _facturaDAL.AgregarFactura(factura, serviciosSeleccionados);
         }
 
-        public List<Factura> ObtenerFacturas()
+        public DataTable ObtenerFacturas()
         {
             return _facturaDAL.ObtenerFacturas();
         }
-
-        //public Factura ObtenerFacturaPorId(int facturaID)
-        //{
-        //    return _facturaDAL.ObtenerFacturaPorId(facturaID);
-        //}
-
         public Factura ObtenerFacturaPorId(int facturaID)
         {
             Factura factura = _facturaDAL.ObtenerFacturaPorId(facturaID);

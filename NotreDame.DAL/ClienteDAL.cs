@@ -26,34 +26,6 @@ namespace NotreDame.DAL
                 }
             }
         }
-
-        //public List<Cliente> ObtenerClientes()
-        //{
-        //    List<Cliente> clientes = new List<Cliente>();
-        //    using (var connection = DatabaseHelper.GetConnection())
-        //    {
-        //        connection.Open();
-        //        using (var command = new MySqlCommand("SELECT * FROM Cliente", connection))
-        //        {
-        //            using (var reader = command.ExecuteReader())
-        //            {
-        //                while (reader.Read())
-        //                {
-        //                    clientes.Add(new Cliente
-        //                    {
-        //                        ClienteID = reader.GetInt32("ClienteID"),
-        //                        Nombre = reader.GetString("Nombre"),
-        //                        Telefono = reader.GetString("Telefono"),
-        //                        Genero = reader.GetString("Genero"),
-        //                        Cedula = reader.GetString("Cedula")
-        //                    });
-        //                }
-        //            }
-        //        }
-        //    }
-        //    return clientes;
-        //}
-
         public DataTable ObtenerClientes()
         {
             DataTable clientesTable = new DataTable();

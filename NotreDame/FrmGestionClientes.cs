@@ -21,50 +21,6 @@ namespace NotreDame
             CargarClientes();
 
         }
-
-        //private void btnEditarCliente_Click(object sender, EventArgs e)
-        //{
-        //    if (dgvClientes.SelectedRows.Count > 0)
-        //    {
-        //        int clienteID = Convert.ToInt32(dgvClientes.SelectedRows[0].Cells["ClienteID"].Value);
-        //        Cliente cliente = new Cliente
-        //        {
-        //            ClienteID = clienteID,
-        //            Nombre = txtNombre.Text,
-        //            Telefono = txtTelefono.Text,
-        //            Genero = cbGenero.SelectedItem.ToString(),
-        //            Cedula = txtCedula.Text
-        //        };
-        //        _clienteBLL.ActualizarCliente(cliente);
-        //        MessageBox.Show("Cliente actualizado exitosamente.");
-        //        CargarClientes();
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Por favor, seleccione un cliente para editar.");
-        //    }
-        //}
-
-        //private void btnEliminarCliente_Click(object sender, EventArgs e)
-        //{
-        //    if (dgvClientes.SelectedRows.Count > 0)
-        //    {
-        //        int clienteID = Convert.ToInt32(dgvClientes.SelectedRows[0].Cells["ClienteID"].Value);
-        //        _clienteBLL.EliminarCliente(clienteID);
-        //        MessageBox.Show("Cliente eliminado exitosamente.");
-        //        CargarClientes();
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Por favor, seleccione un cliente para eliminar.");
-        //    }
-        //}
-
-        //private void CargarClientes()
-        //{
-        //    dgvClientes.DataSource = _clienteBLL.ObtenerClientes();
-        //}
-
         private void CargarClientes()
         {
             DataTable clientesTable = _clienteBLL.ObtenerClientes(); // Suponiendo que ObtenerClientes devuelva un DataTable

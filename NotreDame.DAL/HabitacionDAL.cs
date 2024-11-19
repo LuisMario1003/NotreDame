@@ -43,40 +43,6 @@ namespace NotreDame.DAL
             }
             return habitacionesTable;
         }
-
-        //public List<Habitacion> ObtenerHabitaciones()
-        //{
-        //    List<Habitacion> habitaciones = new List<Habitacion>();
-        //    using (var connection = DatabaseHelper.GetConnection())
-        //    {
-        //        connection.Open();
-        //        string query = @"
-        //    SELECT h.HabitacionID, h.CodigoHabitacion, h.Numero, h.Estado, h.CategoriaID, c.Nombre AS CategoriaNombre 
-        //    FROM Habitacion h
-        //    INNER JOIN Categoria c ON h.CategoriaID = c.CategoriaID";
-        //        using (var command = new MySqlCommand(query, connection))
-        //        {
-        //            using (var reader = command.ExecuteReader())
-        //            {
-        //                while (reader.Read())
-        //                {
-        //                    habitaciones.Add(new Habitacion
-        //                    {
-        //                        HabitacionID = reader.GetInt32("HabitacionID"),
-        //                        CodigoHabitacion = reader.GetString("CodigoHabitacion"),
-        //                        Numero = reader.GetString("Numero"),
-        //                        Estado = reader.GetString("Estado"),
-        //                        CategoriaID = reader.GetInt32("CategoriaID"),
-        //                        Categoria = new Categoria { Nombre = reader.GetString("CategoriaNombre") }
-        //                    });
-        //                }
-        //            }
-        //        }
-        //    }
-        //    return habitaciones;
-
-        //}
-
         public Habitacion ObtenerHabitacionPorId(int habitacionID)
         {
             Habitacion habitacion = null;

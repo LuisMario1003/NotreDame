@@ -21,12 +21,6 @@ namespace NotreDame.BLL
         {
             return _habitacionDAL.ObtenerHabitaciones();
         }
-
-        //public List<Habitacion> ObtenerHabitaciones()
-        //{
-        //    return _habitacionDAL.ObtenerHabitaciones();
-        //}
-
         public Habitacion ObtenerHabitacionPorId(int habitacionID)
         {
             return _habitacionDAL.ObtenerHabitacionPorId(habitacionID);

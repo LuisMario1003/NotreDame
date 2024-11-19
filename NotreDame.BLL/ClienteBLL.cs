@@ -17,21 +17,10 @@ namespace NotreDame.BLL
         {
             _clienteDAL.AgregarCliente(cliente);
         }
-
-        //public List<Cliente> ObtenerClientes()
-        //{
-        //    return _clienteDAL.ObtenerClientes();
-        //}
-
         public DataTable ObtenerClientes()
         {
             return _clienteDAL.ObtenerClientes();
         }
-
-        //public Cliente ObtenerClientePorId(int clienteID)
-        //{
-        //    return _clienteDAL.ObtenerClientes().FirstOrDefault(c => c.ClienteID == clienteID);
-        //}
         public Cliente ObtenerClientePorId(int clienteID)
         {
             var dt = _clienteDAL.ObtenerClientes();

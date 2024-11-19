@@ -32,81 +32,11 @@ namespace NotreDame
             CargarServiciosAdicionales();
             CargarFacturas();
         }
-        //private void btnGuardarFactura_Click(object sender, EventArgs e)
-        //{
-        //    List<int> serviciosSeleccionados = new List<int>();
-        //    foreach (var item in clbServicios.CheckedItems)
-        //    {
-        //        ServicioAdicional servicio = (ServicioAdicional)item;
-        //        serviciosSeleccionados.Add(servicio.ServicioID);
-        //    }
-
-        //    Factura factura = new Factura
-        //    {
-        //        CodigoFactura = txtCodigoFactura.Text,
-        //        ReservaID = (int)cbReserva.SelectedValue,
-        //        Fecha = DateTime.Now
-        //    };
-
-        //    _facturaBLL.RegistrarFactura(factura, serviciosSeleccionados);
-        //    MessageBox.Show("Factura registrada exitosamente.");
-        //    CargarFacturas();
-        //}
-
-        //private void btnEditarFactura_Click(object sender, EventArgs e)
-        //{
-        //    if (dgvFacturas.SelectedRows.Count > 0)
-        //    {
-        //        List<int> serviciosSeleccionados = new List<int>();
-        //        foreach (var item in clbServicios.CheckedItems)
-        //        {
-        //            ServicioAdicional servicio = (ServicioAdicional)item;
-        //            serviciosSeleccionados.Add(servicio.ServicioID);
-        //        }
-
-        //        int facturaID = Convert.ToInt32(dgvFacturas.SelectedRows[0].Cells["FacturaID"].Value);
-        //        Factura factura = new Factura
-        //        {
-        //            FacturaID = facturaID,
-        //            CodigoFactura = txtCodigoFactura.Text,
-        //            ReservaID = (int)cbReserva.SelectedValue,
-        //            Fecha = DateTime.Now
-        //        };
-
-        //        _facturaBLL.ActualizarFactura(factura, serviciosSeleccionados);
-        //        MessageBox.Show("Factura actualizada exitosamente.");
-        //        CargarFacturas();
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Por favor, seleccione una factura para editar.");
-        //    }
-        //}
-
-        //private void btnEliminarFactura_Click(object sender, EventArgs e)
-        //{
-        //    if (dgvFacturas.SelectedRows.Count > 0)
-        //    {
-        //        int facturaID = Convert.ToInt32(dgvFacturas.SelectedRows[0].Cells["FacturaID"].Value);
-        //        _facturaBLL.EliminarFactura(facturaID);
-        //        MessageBox.Show("Factura eliminada exitosamente.");
-        //        CargarFacturas();
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Por favor, seleccione una factura para eliminar.");
-        //    }
-        //}
-
         private void CargarFacturas()
         {
-            dgvFacturas.DataSource = _facturaBLL.ObtenerFacturas();
-            dgvFacturas.Columns["FacturaID"].Visible = false; // Oculta el ID de la factura
-            dgvFacturas.Columns["CodigoFactura"].HeaderText = "Código de Factura";
-            dgvFacturas.Columns["ReservaID"].HeaderText = "ID de Reserva";
-            dgvFacturas.Columns["MontoTotal"].HeaderText = "Monto Total";
+            DataTable facturasTable = _facturaBLL.ObtenerFacturas(); // Suponiendo que ObtenerFacturas devuelva un DataTable
+            dgvFacturas.DataSource = facturasTable;
         }
-
         private void CargarReservas()
         {
             cbReserva.DataSource = _reservaBLL.ObtenerReservas();
@@ -254,6 +184,18 @@ namespace NotreDame
             }
         }
 
+        private void txtBuscarCodigoFactura_TextChanged(object sender, EventArgs e)
+        {
+            FiltrarFacturasPorCodigo();
+        }
+
+        private void FiltrarFacturasPorCodigo()
+        {
+            string codigo = txtBuscarCodigoFactura.Text.ToLower();
+
+            (dgvFacturas.DataSource as DataTable).DefaultView.RowFilter = $"CodigoFactura LIKE '%{codigo}%'";
+        }
+
         private void lblHabitaciones_MouseEnter(object sender, EventArgs e)
         {
             lblHabitaciones.ForeColor = Color.Goldenrod;
@@ -323,51 +265,6 @@ namespace NotreDame
         {
             label3.ForeColor= Color.Black;
         }
-        // Método para exportar la factura seleccionada a PDF
-        //private void ExportarFacturaSeleccionadaAPdf(string archivo)
-        //{
-        //    if (dgvFacturas.SelectedRows.Count == 0)
-        //    {
-        //        MessageBox.Show("Por favor, seleccione una factura para exportar.");
-        //        return;
-        //    }
-
-        //    int facturaID = Convert.ToInt32(dgvFacturas.SelectedRows[0].Cells["FacturaID"].Value);
-        //    Factura factura = _facturaBLL.ObtenerFacturaPorId(facturaID);
-
-        //    using (var writer = new PdfWriter(archivo))
-        //    {
-        //        using (var pdf = new PdfDocument(writer))
-        //        {
-        //            var document = new Document(pdf);
-
-        //            // Definir estilos de fuente
-        //            var bold = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
-        //            var normal = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
-
-        //            // Título del documento
-        //            document.Add(new Paragraph("Factura").SetTextAlignment(TextAlignment.CENTER).SetFontSize(20).SetFont(bold));
-
-        //            document.Add(new Paragraph($"Código de Factura: {factura.CodigoFactura}")
-        //                .SetFontSize(14)
-        //                .SetFont(bold));
-
-        //            document.Add(new Paragraph($"ID de Reserva: {factura.ReservaID}")
-        //                .SetFontSize(12)
-        //                .SetFont(normal));
-
-        //            document.Add(new Paragraph($"Fecha: {factura.Fecha}")
-        //                .SetFontSize(12)
-        //                .SetFont(normal));
-
-        //            document.Add(new Paragraph($"Monto Total: {factura.MontoTotal:C}")
-        //                .SetFontSize(12)
-        //                .SetFont(normal));
-        //        }
-        //    }
-
-        //    MessageBox.Show("Factura exportada exitosamente a PDF.");
-        //}
 
         private void ExportarFacturaSeleccionadaAPdf(string archivo)
         {
@@ -437,20 +334,5 @@ namespace NotreDame
                 }
             }
         }
-
-
-        //private void btnExportarFacturaPdf_Click(object sender, EventArgs e)
-        //{
-        //    using (SaveFileDialog saveFileDialog = new SaveFileDialog())
-        //    {
-        //        saveFileDialog.Filter = "PDF files (*.pdf)|*.pdf";
-        //        saveFileDialog.Title = "Guardar Factura como PDF";
-        //        if (saveFileDialog.ShowDialog() == DialogResult.OK)
-        //        {
-        //            ExportarFacturaSeleccionadaAPdf(saveFileDialog.FileName);
-        //        }
-        //    }
-        //}
-
     }
 }

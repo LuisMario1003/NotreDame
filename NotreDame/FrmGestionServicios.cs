@@ -20,55 +20,6 @@ namespace NotreDame
             InitializeComponent();
             CargarServicios();
         }
-        //private void btnGuardarServicio_Click(object sender, EventArgs e)
-        //{
-        //    ServicioAdicional servicio = new ServicioAdicional
-        //    {
-        //        CodigoServicio = txtCodigoServicio.Text,
-        //        Nombre = txtNombre.Text,
-        //        Precio = decimal.Parse(txtPrecio.Text)
-        //    };
-        //    _servicioAdicionalBLL.RegistrarServicioAdicional(servicio);
-        //    MessageBox.Show("Servicio adicional registrado exitosamente.");
-        //    CargarServicios();
-        //}
-
-        //private void btnEditarServicio_Click(object sender, EventArgs e)
-        //{
-        //    if (dgvServicios.SelectedRows.Count > 0)
-        //    {
-        //        int servicioID = Convert.ToInt32(dgvServicios.SelectedRows[0].Cells["ServicioID"].Value);
-        //        ServicioAdicional servicio = new ServicioAdicional
-        //        {
-        //            ServicioID = servicioID,
-        //            CodigoServicio = txtCodigoServicio.Text,
-        //            Nombre = txtNombre.Text,
-        //            Precio = decimal.Parse(txtPrecio.Text)
-        //        };
-        //        _servicioAdicionalBLL.ActualizarServicioAdicional(servicio);
-        //        MessageBox.Show("Servicio adicional actualizado exitosamente.");
-        //        CargarServicios();
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Por favor, seleccione un servicio para editar.");
-        //    }
-        //}
-
-        //private void btnEliminarServicio_Click(object sender, EventArgs e)
-        //{
-        //    if (dgvServicios.SelectedRows.Count > 0)
-        //    {
-        //        int servicioID = Convert.ToInt32(dgvServicios.SelectedRows[0].Cells["ServicioID"].Value);
-        //        _servicioAdicionalBLL.EliminarServicioAdicional(servicioID);
-        //        MessageBox.Show("Servicio adicional eliminado exitosamente.");
-        //        CargarServicios();
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Por favor, seleccione un servicio para eliminar.");
-        //    }
-        //}
 
         private void CargarServicios()
         {

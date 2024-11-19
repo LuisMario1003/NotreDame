@@ -287,7 +287,7 @@
             this.lblTitulo.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft YaHei", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblTitulo.Location = new System.Drawing.Point(192, 13);
+            this.lblTitulo.Location = new System.Drawing.Point(257, 13);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(241, 42);
             this.lblTitulo.TabIndex = 55;
@@ -338,7 +338,7 @@
             this.textBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(594, 58);
+            this.textBox2.Location = new System.Drawing.Point(597, 57);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(322, 188);

@@ -2,6 +2,7 @@
 using NotreDame.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,62 +38,23 @@ namespace NotreDame.DAL
                 }
             }
         }
-
-        public List<Factura> ObtenerFacturas()
+        public DataTable ObtenerFacturas()
         {
-            List<Factura> facturas = new List<Factura>();
+            DataTable facturasTable = new DataTable();
             using (var connection = DatabaseHelper.GetConnection())
             {
                 connection.Open();
-                using (var command = new MySqlCommand("SELECT * FROM Factura", connection))
+                string query = "SELECT * FROM Factura";
+                using (var command = new MySqlCommand(query, connection))
                 {
-                    using (var reader = command.ExecuteReader())
+                    using (var adapter = new MySqlDataAdapter(command))
                     {
-                        while (reader.Read())
-                        {
-                            facturas.Add(new Factura
-                            {
-                                FacturaID = reader.GetInt32("FacturaID"),
-                                CodigoFactura = reader.GetString("CodigoFactura"),
-                                ReservaID = reader.GetInt32("ReservaID"),
-                                Fecha = reader.GetDateTime("Fecha"),
-                                MontoTotal = reader.GetDecimal("MontoTotal")
-                            });
-                        }
+                        adapter.Fill(facturasTable);
                     }
                 }
             }
-            return facturas;
+            return facturasTable;
         }
-
-        //public Factura ObtenerFacturaPorId(int facturaID)
-        //{
-        //    Factura factura = null;
-        //    using (var connection = DatabaseHelper.GetConnection())
-        //    {
-        //        connection.Open();
-        //        using (var command = new MySqlCommand("SELECT * FROM Factura WHERE FacturaID = @FacturaID", connection))
-        //        {
-        //            command.Parameters.AddWithValue("@FacturaID", facturaID);
-        //            using (var reader = command.ExecuteReader())
-        //            {
-        //                if (reader.Read())
-        //                {
-        //                    factura = new Factura
-        //                    {
-        //                        FacturaID = reader.GetInt32("FacturaID"),
-        //                        CodigoFactura = reader.GetString("CodigoFactura"),
-        //                        ReservaID = reader.GetInt32("ReservaID"),
-        //                        Fecha = reader.GetDateTime("Fecha"),
-        //                        MontoTotal = reader.GetDecimal("MontoTotal")
-        //                    };
-        //                }
-        //            }
-        //        }
-        //    }
-        //    return factura;
-        //}
-
         public Factura ObtenerFacturaPorId(int facturaID)
         {
             Factura factura = null;
