@@ -244,6 +244,15 @@ namespace NotreDame
                 MessageBox.Show("Por favor, seleccione una factura para eliminar.");
             }
         }
+        private void LimpiarCampos()
+        {
+            txtCodigoFactura.Clear();
+            cbReserva.SelectedIndex = -1;
+            foreach (int i in clbServicios.CheckedIndices)
+            {
+                clbServicios.SetItemCheckState(i, CheckState.Unchecked);
+            }
+        }
 
         private void lblHabitaciones_MouseEnter(object sender, EventArgs e)
         {

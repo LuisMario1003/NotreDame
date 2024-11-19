@@ -60,9 +60,15 @@ namespace NotreDame
         //    }
         //}
 
+        //private void CargarClientes()
+        //{
+        //    dgvClientes.DataSource = _clienteBLL.ObtenerClientes();
+        //}
+
         private void CargarClientes()
         {
-            dgvClientes.DataSource = _clienteBLL.ObtenerClientes();
+            DataTable clientesTable = _clienteBLL.ObtenerClientes(); // Suponiendo que ObtenerClientes devuelva un DataTable
+            dgvClientes.DataSource = clientesTable;
         }
 
         private void dgvClientes_SelectionChanged(object sender, EventArgs e)
@@ -138,7 +144,8 @@ namespace NotreDame
                 Cedula = txtCedula.Text 
             }; 
             _clienteBLL.RegistrarCliente(cliente); 
-            MessageBox.Show("Cliente registrado exitosamente."); 
+            MessageBox.Show("Cliente registrado exitosamente.");
+            LimpiarCampos();
             CargarClientes();
         }
 
@@ -157,6 +164,7 @@ namespace NotreDame
                 };
                 _clienteBLL.ActualizarCliente(cliente);
                 MessageBox.Show("Cliente actualizado exitosamente.");
+                LimpiarCampos();
                 CargarClientes();
             }
             else
@@ -178,6 +186,20 @@ namespace NotreDame
             {
                 MessageBox.Show("Por favor, seleccione un cliente para eliminar.");
             }
+        }
+
+        private void txtBuscarCedula_TextChanged(object sender, EventArgs e)
+        {
+            string cedula = txtBuscarCedula.Text.ToLower();
+            (dgvClientes.DataSource as DataTable).DefaultView.RowFilter = $"Cedula LIKE '%{cedula}%'";
+        }
+
+        private void LimpiarCampos() 
+        { 
+            txtCedula.Clear(); 
+            txtNombre.Clear(); 
+            txtTelefono.Clear(); 
+            cbGenero.SelectedIndex = -1; 
         }
 
         private void lblHabitaciones_MouseEnter(object sender, EventArgs e)

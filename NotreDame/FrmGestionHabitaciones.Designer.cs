@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGestionHabitaciones));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -60,6 +60,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvHabitaciones = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtBuscarCodigo = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -329,7 +330,7 @@
             this.btnEliminarHabitacion.BackColor = System.Drawing.Color.Goldenrod;
             this.btnEliminarHabitacion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminarHabitacion.Font = new System.Drawing.Font("Maiandra GD", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarHabitacion.Location = new System.Drawing.Point(584, 157);
+            this.btnEliminarHabitacion.Location = new System.Drawing.Point(447, 157);
             this.btnEliminarHabitacion.Name = "btnEliminarHabitacion";
             this.btnEliminarHabitacion.Size = new System.Drawing.Size(120, 36);
             this.btnEliminarHabitacion.TabIndex = 60;
@@ -342,7 +343,7 @@
             this.btnAgregarHabitacion.BackColor = System.Drawing.Color.Goldenrod;
             this.btnAgregarHabitacion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAgregarHabitacion.Font = new System.Drawing.Font("Maiandra GD", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarHabitacion.Location = new System.Drawing.Point(303, 157);
+            this.btnAgregarHabitacion.Location = new System.Drawing.Point(195, 157);
             this.btnAgregarHabitacion.Name = "btnAgregarHabitacion";
             this.btnAgregarHabitacion.Size = new System.Drawing.Size(120, 36);
             this.btnAgregarHabitacion.TabIndex = 59;
@@ -355,7 +356,7 @@
             this.btnEditarHabitacion.BackColor = System.Drawing.Color.Goldenrod;
             this.btnEditarHabitacion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEditarHabitacion.Font = new System.Drawing.Font("Maiandra GD", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarHabitacion.Location = new System.Drawing.Point(442, 157);
+            this.btnEditarHabitacion.Location = new System.Drawing.Point(321, 157);
             this.btnEditarHabitacion.Name = "btnEditarHabitacion";
             this.btnEditarHabitacion.Size = new System.Drawing.Size(120, 36);
             this.btnEditarHabitacion.TabIndex = 58;
@@ -397,28 +398,28 @@
             // 
             // dgvHabitaciones
             // 
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.Silver;
-            this.dgvHabitaciones.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Silver;
+            this.dgvHabitaciones.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvHabitaciones.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvHabitaciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHabitaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHabitaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvHabitaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle30.BackColor = System.Drawing.Color.DarkGray;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.DarkGray;
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHabitaciones.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHabitaciones.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvHabitaciones.EnableHeadersVisualStyles = false;
             this.dgvHabitaciones.Location = new System.Drawing.Point(176, 217);
             this.dgvHabitaciones.Name = "dgvHabitaciones";
@@ -437,12 +438,28 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // txtBuscarCodigo
+            // 
+            this.txtBuscarCodigo.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtBuscarCodigo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBuscarCodigo.Font = new System.Drawing.Font("Microsoft Uighur", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscarCodigo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtBuscarCodigo.Location = new System.Drawing.Point(592, 157);
+            this.txtBuscarCodigo.Multiline = true;
+            this.txtBuscarCodigo.Name = "txtBuscarCodigo";
+            this.txtBuscarCodigo.Size = new System.Drawing.Size(193, 33);
+            this.txtBuscarCodigo.TabIndex = 68;
+            this.txtBuscarCodigo.Tag = "";
+            this.txtBuscarCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBuscarCodigo.TextChanged += new System.EventHandler(this.txtBuscarCodigo_TextChanged);
+            // 
             // FrmGestionHabitaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(934, 456);
+            this.Controls.Add(this.txtBuscarCodigo);
             this.Controls.Add(this.dgvHabitaciones);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNumero);
@@ -508,5 +525,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.TextBox txtBuscarCodigo;
     }
 }

@@ -175,6 +175,7 @@ namespace NotreDame
             };
             _reservaBLL.RegistrarReserva(reserva);
             MessageBox.Show("Reserva registrada exitosamente.");
+            LimpiarCampos();
             CargarReservas();
         }
 
@@ -194,6 +195,7 @@ namespace NotreDame
                 };
                 _reservaBLL.ActualizarReserva(reserva);
                 MessageBox.Show("Reserva actualizada exitosamente.");
+                LimpiarCampos();
                 CargarReservas();
             }
             else
@@ -216,6 +218,16 @@ namespace NotreDame
                 MessageBox.Show("Por favor, seleccione una reserva para eliminar.");
             }
         }
+
+        private void LimpiarCampos()
+        {
+            txtCodigoReserva.Clear();
+            cbCliente.SelectedIndex = -1;
+            cbHabitacion.SelectedIndex = -1;
+            dtpFechaInicio.Value = DateTime.Now;
+            dtpFechaFin.Value = DateTime.Now;
+        }
+
 
         private void lblHabitaciones_MouseEnter(object sender, EventArgs e)
         {

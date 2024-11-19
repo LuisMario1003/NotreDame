@@ -2,6 +2,7 @@
 using NotreDame.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,11 +17,15 @@ namespace NotreDame.BLL
         {
             _habitacionDAL.AgregarHabitacion(habitacion);
         }
-
-        public List<Habitacion> ObtenerHabitaciones()
+        public DataTable ObtenerHabitaciones()
         {
             return _habitacionDAL.ObtenerHabitaciones();
         }
+
+        //public List<Habitacion> ObtenerHabitaciones()
+        //{
+        //    return _habitacionDAL.ObtenerHabitaciones();
+        //}
 
         public Habitacion ObtenerHabitacionPorId(int habitacionID)
         {

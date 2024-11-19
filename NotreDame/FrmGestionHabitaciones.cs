@@ -77,17 +77,23 @@ namespace NotreDame
 
         private void CargarHabitaciones()
         {
-            //dgvHabitaciones.DataSource = _habitacionBLL.ObtenerHabitaciones();
-            dgvHabitaciones.DataSource = _habitacionBLL.ObtenerHabitaciones();
-            dgvHabitaciones.Columns["HabitacionID"].Visible = false; // Oculta el ID de la habitación
-            dgvHabitaciones.Columns["CategoriaID"].Visible = false; // Oculta el ID de la categoría
-            dgvHabitaciones.Columns["Categoria"].Visible = false; // Oculta la propiedad de categoría completa
-            dgvHabitaciones.Columns["CodigoHabitacion"].HeaderText = "Código de Habitación";
-            dgvHabitaciones.Columns["Numero"].HeaderText = "Número de Habitación";
-            dgvHabitaciones.Columns["Estado"].HeaderText = "Estado";
-            dgvHabitaciones.Columns["CategoriaNombre"].HeaderText = "Categoría";
-
+            DataTable habitacionesTable = _habitacionBLL.ObtenerHabitaciones(); // Suponiendo que ObtenerHabitaciones devuelva un DataTable
+            dgvHabitaciones.DataSource = habitacionesTable;
         }
+
+        //private void CargarHabitaciones()
+        //{
+        //    //dgvHabitaciones.DataSource = _habitacionBLL.ObtenerHabitaciones();
+        //    dgvHabitaciones.DataSource = _habitacionBLL.ObtenerHabitaciones();
+        //    dgvHabitaciones.Columns["HabitacionID"].Visible = false; // Oculta el ID de la habitación
+        //    dgvHabitaciones.Columns["CategoriaID"].Visible = false; // Oculta el ID de la categoría
+        //    dgvHabitaciones.Columns["Categoria"].Visible = false; // Oculta la propiedad de categoría completa
+        //    dgvHabitaciones.Columns["CodigoHabitacion"].HeaderText = "Código de Habitación";
+        //    dgvHabitaciones.Columns["Numero"].HeaderText = "Número de Habitación";
+        //    dgvHabitaciones.Columns["Estado"].HeaderText = "Estado";
+        //    dgvHabitaciones.Columns["CategoriaNombre"].HeaderText = "Categoría";
+
+        //}
 
         private void CargarCategorias()
         {
@@ -106,6 +112,13 @@ namespace NotreDame
                 cbCategoria.SelectedValue = dgvHabitaciones.SelectedRows[0].Cells["CategoriaID"].Value;
             }
 
+        }
+        private void LimpiarCampos()
+        {
+            txtCodigoHabitacion.Clear();
+            txtNumero.Clear();
+            cbEstado.SelectedIndex = -1;
+            cbCategoria.SelectedIndex = -1;
         }
 
         private void lblCategorias_Click(object sender, EventArgs e)
@@ -171,6 +184,7 @@ namespace NotreDame
             };
             _habitacionBLL.RegistrarHabitacion(habitacion);
             MessageBox.Show("Habitación registrada exitosamente.");
+            LimpiarCampos();
             CargarHabitaciones();
         }
 
@@ -189,6 +203,7 @@ namespace NotreDame
                 };
                 _habitacionBLL.ActualizarHabitacion(habitacion);
                 MessageBox.Show("Habitación actualizada exitosamente.");
+                LimpiarCampos();
                 CargarHabitaciones();
             }
             else
@@ -281,5 +296,18 @@ namespace NotreDame
         {
             label3.ForeColor= Color.Black;
         }
+
+        private void txtBuscarCodigo_TextChanged(object sender, EventArgs e)
+        {
+            FiltrarHabitacionesPorCodigo();
+        }
+
+        private void FiltrarHabitacionesPorCodigo()
+        {
+            string codigo = txtBuscarCodigo.Text.ToLower();
+
+            (dgvHabitaciones.DataSource as DataTable).DefaultView.RowFilter = $"CodigoHabitacion LIKE '%{codigo}%'";
+        }
+
     }
 }

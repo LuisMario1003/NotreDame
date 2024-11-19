@@ -143,6 +143,7 @@ namespace NotreDame
             };
             _categoriaBLL.RegistrarCategoria(categoria);
             MessageBox.Show("Categoría registrada exitosamente.");
+            LimpiarCampos();
             CargarCategorias();
         }
 
@@ -159,6 +160,7 @@ namespace NotreDame
                 };
                 _categoriaBLL.ActualizarCategoria(categoria);
                 MessageBox.Show("Categoría actualizada exitosamente.");
+                LimpiarCampos();
                 CargarCategorias();
             }
             else
@@ -180,6 +182,11 @@ namespace NotreDame
             {
                 MessageBox.Show("Por favor, seleccione una categoría para eliminar.");
             }
+        }
+        private void LimpiarCampos()
+        {
+            txtPrecio.Clear();
+            txtNombre.Clear();
         }
 
         private void lblHabitaciones_MouseEnter(object sender, EventArgs e)

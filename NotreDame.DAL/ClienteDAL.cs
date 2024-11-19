@@ -2,6 +2,7 @@
 using NotreDame.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,31 +27,49 @@ namespace NotreDame.DAL
             }
         }
 
-        public List<Cliente> ObtenerClientes()
+        //public List<Cliente> ObtenerClientes()
+        //{
+        //    List<Cliente> clientes = new List<Cliente>();
+        //    using (var connection = DatabaseHelper.GetConnection())
+        //    {
+        //        connection.Open();
+        //        using (var command = new MySqlCommand("SELECT * FROM Cliente", connection))
+        //        {
+        //            using (var reader = command.ExecuteReader())
+        //            {
+        //                while (reader.Read())
+        //                {
+        //                    clientes.Add(new Cliente
+        //                    {
+        //                        ClienteID = reader.GetInt32("ClienteID"),
+        //                        Nombre = reader.GetString("Nombre"),
+        //                        Telefono = reader.GetString("Telefono"),
+        //                        Genero = reader.GetString("Genero"),
+        //                        Cedula = reader.GetString("Cedula")
+        //                    });
+        //                }
+        //            }
+        //        }
+        //    }
+        //    return clientes;
+        //}
+
+        public DataTable ObtenerClientes()
         {
-            List<Cliente> clientes = new List<Cliente>();
+            DataTable clientesTable = new DataTable();
             using (var connection = DatabaseHelper.GetConnection())
             {
                 connection.Open();
-                using (var command = new MySqlCommand("SELECT * FROM Cliente", connection))
+                string query = "SELECT * FROM Cliente";
+                using (var command = new MySqlCommand(query, connection))
                 {
-                    using (var reader = command.ExecuteReader())
+                    using (var adapter = new MySqlDataAdapter(command))
                     {
-                        while (reader.Read())
-                        {
-                            clientes.Add(new Cliente
-                            {
-                                ClienteID = reader.GetInt32("ClienteID"),
-                                Nombre = reader.GetString("Nombre"),
-                                Telefono = reader.GetString("Telefono"),
-                                Genero = reader.GetString("Genero"),
-                                Cedula = reader.GetString("Cedula")
-                            });
-                        }
+                        adapter.Fill(clientesTable);
                     }
                 }
             }
-            return clientes;
+            return clientesTable;
         }
 
         public void ActualizarCliente(Cliente cliente) 

@@ -142,6 +142,7 @@ namespace NotreDame
             };
             _servicioAdicionalBLL.RegistrarServicioAdicional(servicio);
             MessageBox.Show("Servicio adicional registrado exitosamente.");
+            LimpiarCampos();
             CargarServicios();
         }
 
@@ -159,6 +160,7 @@ namespace NotreDame
                 };
                 _servicioAdicionalBLL.ActualizarServicioAdicional(servicio);
                 MessageBox.Show("Servicio adicional actualizado exitosamente.");
+                LimpiarCampos();
                 CargarServicios();
             }
             else
@@ -181,7 +183,12 @@ namespace NotreDame
                 MessageBox.Show("Por favor, seleccione un servicio para eliminar.");
             }
         }
-
+         private void LimpiarCampos() 
+        {
+            txtCodigoServicio.Clear();
+            txtNombre.Clear();
+            txtPrecio.Clear();
+        }
         private void lblSalir(object sender, EventArgs e)
         {
             Application.Exit();
