@@ -399,6 +399,7 @@
             this.dgvCategorias.ReadOnly = true;
             this.dgvCategorias.Size = new System.Drawing.Size(747, 243);
             this.dgvCategorias.TabIndex = 64;
+            this.dgvCategorias.SelectionChanged += new System.EventHandler(this.dgvCategorias_SelectionChanged);
             // 
             // pictureBox1
             // 

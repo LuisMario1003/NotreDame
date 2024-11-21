@@ -85,6 +85,10 @@ namespace NotreDame
 
         private void btnAgregarServicio_Click(object sender, EventArgs e)
         {
+            if (!ValidarCamposServicios()) 
+            { 
+                return; 
+            }
             ServicioAdicional servicio = new ServicioAdicional
             {
                 CodigoServicio = txtCodigoServicio.Text,
@@ -140,6 +144,33 @@ namespace NotreDame
             txtNombre.Clear();
             txtPrecio.Clear();
         }
+
+        private bool ValidarCamposServicios()
+        {
+            if (string.IsNullOrWhiteSpace(txtCodigoServicio.Text))
+            {
+                MessageBox.Show("Por favor, ingrese un código de servicio.");
+                txtCodigoServicio.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                MessageBox.Show("Por favor, ingrese un nombre de servicio.");
+                txtNombre.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtPrecio.Text) || !decimal.TryParse(txtPrecio.Text, out _))
+            {
+                MessageBox.Show("Por favor, ingrese un precio válido.");
+                txtPrecio.Focus();
+                return false;
+            }
+
+            return true;
+        }
+
         private void lblSalir(object sender, EventArgs e)
         {
             Application.Exit();

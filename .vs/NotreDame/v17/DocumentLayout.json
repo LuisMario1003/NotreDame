@@ -3,23 +3,35 @@
   "WorkspaceRootPath": "C:\\Users\\HEWLETT PACKARD\\Desktop\\Programacion3\\NotreDame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{87FD2440-1D21-4437-AC11-573F1C7C5518}|NotreDame\\NotreDame.csproj|c:\\users\\hewlett packard\\desktop\\programacion3\\notredame\\notredame\\frmgestionfactura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87FD2440-1D21-4437-AC11-573F1C7C5518}|NotreDame\\NotreDame.csproj|solutionrelative:notredame\\frmgestionfactura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{87FD2440-1D21-4437-AC11-573F1C7C5518}|NotreDame\\NotreDame.csproj|c:\\users\\hewlett packard\\desktop\\programacion3\\notredame\\notredame\\frmgestionservicios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87FD2440-1D21-4437-AC11-573F1C7C5518}|NotreDame\\NotreDame.csproj|solutionrelative:notredame\\frmgestionservicios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{87FD2440-1D21-4437-AC11-573F1C7C5518}|NotreDame\\NotreDame.csproj|C:\\Users\\HEWLETT PACKARD\\Desktop\\Programacion3\\NotreDame\\notredame\\frmgestionfactura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{87FD2440-1D21-4437-AC11-573F1C7C5518}|NotreDame\\NotreDame.csproj|solutionrelative:notredame\\frmgestionfactura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{87FD2440-1D21-4437-AC11-573F1C7C5518}|NotreDame\\NotreDame.csproj|C:\\Users\\HEWLETT PACKARD\\Desktop\\Programacion3\\NotreDame\\notredame\\frmgestionservicios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{87FD2440-1D21-4437-AC11-573F1C7C5518}|NotreDame\\NotreDame.csproj|c:\\users\\hewlett packard\\desktop\\programacion3\\notredame\\notredame\\frmgestionservicios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{87FD2440-1D21-4437-AC11-573F1C7C5518}|NotreDame\\NotreDame.csproj|solutionrelative:notredame\\frmgestionservicios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{87FD2440-1D21-4437-AC11-573F1C7C5518}|NotreDame\\NotreDame.csproj|C:\\Users\\HEWLETT PACKARD\\Desktop\\Programacion3\\NotreDame\\notredame\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{87FD2440-1D21-4437-AC11-573F1C7C5518}|NotreDame\\NotreDame.csproj|c:\\users\\hewlett packard\\desktop\\programacion3\\notredame\\notredame\\frmgestionreserva.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{87FD2440-1D21-4437-AC11-573F1C7C5518}|NotreDame\\NotreDame.csproj|solutionrelative:notredame\\frmgestionreserva.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87FD2440-1D21-4437-AC11-573F1C7C5518}|NotreDame\\NotreDame.csproj|c:\\users\\hewlett packard\\desktop\\programacion3\\notredame\\notredame\\frmgestionhabitaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{87FD2440-1D21-4437-AC11-573F1C7C5518}|NotreDame\\NotreDame.csproj|solutionrelative:notredame\\frmgestionhabitaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87FD2440-1D21-4437-AC11-573F1C7C5518}|NotreDame\\NotreDame.csproj|c:\\users\\hewlett packard\\desktop\\programacion3\\notredame\\notredame\\frmgestionfactura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{87FD2440-1D21-4437-AC11-573F1C7C5518}|NotreDame\\NotreDame.csproj|solutionrelative:notredame\\frmgestionfactura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87FD2440-1D21-4437-AC11-573F1C7C5518}|NotreDame\\NotreDame.csproj|c:\\users\\hewlett packard\\desktop\\programacion3\\notredame\\notredame\\frmgestionclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{87FD2440-1D21-4437-AC11-573F1C7C5518}|NotreDame\\NotreDame.csproj|solutionrelative:notredame\\frmgestionclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87FD2440-1D21-4437-AC11-573F1C7C5518}|NotreDame\\NotreDame.csproj|c:\\users\\hewlett packard\\desktop\\programacion3\\notredame\\notredame\\frmgestioncategorias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{87FD2440-1D21-4437-AC11-573F1C7C5518}|NotreDame\\NotreDame.csproj|solutionrelative:notredame\\frmgestioncategorias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87FD2440-1D21-4437-AC11-573F1C7C5518}|NotreDame\\NotreDame.csproj|c:\\users\\hewlett packard\\desktop\\programacion3\\notredame\\notredame\\frmgestionclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87FD2440-1D21-4437-AC11-573F1C7C5518}|NotreDame\\NotreDame.csproj|solutionrelative:notredame\\frmgestionclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87FD2440-1D21-4437-AC11-573F1C7C5518}|NotreDame\\NotreDame.csproj|c:\\users\\hewlett packard\\desktop\\programacion3\\notredame\\notredame\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{87FD2440-1D21-4437-AC11-573F1C7C5518}|NotreDame\\NotreDame.csproj|solutionrelative:notredame\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -55,32 +67,91 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FrmGestionFactura.cs",
-              "DocumentMoniker": "C:\\Users\\HEWLETT PACKARD\\Desktop\\Programacion3\\NotreDame\\NotreDame\\FrmGestionFactura.cs",
-              "RelativeDocumentMoniker": "NotreDame\\FrmGestionFactura.cs",
-              "ToolTip": "C:\\Users\\HEWLETT PACKARD\\Desktop\\Programacion3\\NotreDame\\NotreDame\\FrmGestionFactura.cs",
-              "RelativeToolTip": "NotreDame\\FrmGestionFactura.cs",
-              "ViewState": "AQIAAG4AAAAAAAAAAADwv4EAAAAcAAAA",
+              "Title": "FrmGestionServicios.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\HEWLETT PACKARD\\Desktop\\Programacion3\\NotreDame\\NotreDame\\FrmGestionServicios.cs",
+              "RelativeDocumentMoniker": "NotreDame\\FrmGestionServicios.cs",
+              "ToolTip": "C:\\Users\\HEWLETT PACKARD\\Desktop\\Programacion3\\NotreDame\\NotreDame\\FrmGestionServicios.cs [Dise\u00F1o]",
+              "RelativeToolTip": "NotreDame\\FrmGestionServicios.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T16:42:05.292Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T18:54:27.309Z",
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FrmGestionServicios.cs",
-              "DocumentMoniker": "C:\\Users\\HEWLETT PACKARD\\Desktop\\Programacion3\\NotreDame\\NotreDame\\FrmGestionServicios.cs",
-              "RelativeDocumentMoniker": "NotreDame\\FrmGestionServicios.cs",
-              "ToolTip": "C:\\Users\\HEWLETT PACKARD\\Desktop\\Programacion3\\NotreDame\\NotreDame\\FrmGestionServicios.cs",
-              "RelativeToolTip": "NotreDame\\FrmGestionServicios.cs",
-              "ViewState": "AQIAAG4AAAAAAAAAAADwvwAAAAAAAAAA",
+              "Title": "FrmGestionReserva.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\HEWLETT PACKARD\\Desktop\\Programacion3\\NotreDame\\NotreDame\\FrmGestionReserva.cs",
+              "RelativeDocumentMoniker": "NotreDame\\FrmGestionReserva.cs",
+              "ToolTip": "C:\\Users\\HEWLETT PACKARD\\Desktop\\Programacion3\\NotreDame\\NotreDame\\FrmGestionReserva.cs [Dise\u00F1o]",
+              "RelativeToolTip": "NotreDame\\FrmGestionReserva.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T16:41:37.411Z",
+              "WhenOpened": "2024-11-21T18:54:05.653Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FrmGestionHabitaciones.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\HEWLETT PACKARD\\Desktop\\Programacion3\\NotreDame\\NotreDame\\FrmGestionHabitaciones.cs",
+              "RelativeDocumentMoniker": "NotreDame\\FrmGestionHabitaciones.cs",
+              "ToolTip": "C:\\Users\\HEWLETT PACKARD\\Desktop\\Programacion3\\NotreDame\\NotreDame\\FrmGestionHabitaciones.cs [Dise\u00F1o]",
+              "RelativeToolTip": "NotreDame\\FrmGestionHabitaciones.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T18:53:47.427Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FrmGestionFactura.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\HEWLETT PACKARD\\Desktop\\Programacion3\\NotreDame\\NotreDame\\FrmGestionFactura.cs",
+              "RelativeDocumentMoniker": "NotreDame\\FrmGestionFactura.cs",
+              "ToolTip": "C:\\Users\\HEWLETT PACKARD\\Desktop\\Programacion3\\NotreDame\\NotreDame\\FrmGestionFactura.cs [Dise\u00F1o]",
+              "RelativeToolTip": "NotreDame\\FrmGestionFactura.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T18:53:23.329Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FrmGestionCategorias.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\HEWLETT PACKARD\\Desktop\\Programacion3\\NotreDame\\NotreDame\\FrmGestionCategorias.cs",
+              "RelativeDocumentMoniker": "NotreDame\\FrmGestionCategorias.cs",
+              "ToolTip": "C:\\Users\\HEWLETT PACKARD\\Desktop\\Programacion3\\NotreDame\\NotreDame\\FrmGestionCategorias.cs [Dise\u00F1o]",
+              "RelativeToolTip": "NotreDame\\FrmGestionCategorias.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T18:51:56.921Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FrmGestionClientes.cs",
+              "DocumentMoniker": "C:\\Users\\HEWLETT PACKARD\\Desktop\\Programacion3\\NotreDame\\NotreDame\\FrmGestionClientes.cs",
+              "RelativeDocumentMoniker": "NotreDame\\FrmGestionClientes.cs",
+              "ToolTip": "C:\\Users\\HEWLETT PACKARD\\Desktop\\Programacion3\\NotreDame\\NotreDame\\FrmGestionClientes.cs",
+              "RelativeToolTip": "NotreDame\\FrmGestionClientes.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAowAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T18:49:46.587Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "FrmGestionClientes.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\HEWLETT PACKARD\\Desktop\\Programacion3\\NotreDame\\NotreDame\\FrmGestionClientes.cs",
+              "RelativeDocumentMoniker": "NotreDame\\FrmGestionClientes.cs",
+              "ToolTip": "C:\\Users\\HEWLETT PACKARD\\Desktop\\Programacion3\\NotreDame\\NotreDame\\FrmGestionClientes.cs [Dise\u00F1o]",
+              "RelativeToolTip": "NotreDame\\FrmGestionClientes.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T18:49:41.967Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Principal.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\HEWLETT PACKARD\\Desktop\\Programacion3\\NotreDame\\NotreDame\\Principal.cs",
               "RelativeDocumentMoniker": "NotreDame\\Principal.cs",
@@ -88,30 +159,6 @@
               "RelativeToolTip": "NotreDame\\Principal.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-19T17:12:15.44Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FrmGestionFactura.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\HEWLETT PACKARD\\Desktop\\Programacion3\\NotreDame\\NotreDame\\FrmGestionFactura.cs",
-              "RelativeDocumentMoniker": "NotreDame\\FrmGestionFactura.cs",
-              "ToolTip": "C:\\Users\\HEWLETT PACKARD\\Desktop\\Programacion3\\NotreDame\\NotreDame\\FrmGestionFactura.cs [Dise\u00F1o]",
-              "RelativeToolTip": "NotreDame\\FrmGestionFactura.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T18:45:34.333Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FrmGestionServicios.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\HEWLETT PACKARD\\Desktop\\Programacion3\\NotreDame\\NotreDame\\FrmGestionServicios.cs",
-              "RelativeDocumentMoniker": "NotreDame\\FrmGestionServicios.cs",
-              "ToolTip": "C:\\Users\\HEWLETT PACKARD\\Desktop\\Programacion3\\NotreDame\\NotreDame\\FrmGestionServicios.cs [Dise\u00F1o]",
-              "RelativeToolTip": "NotreDame\\FrmGestionServicios.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T22:19:57.724Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]

@@ -422,6 +422,7 @@
             this.dgvFacturas.ReadOnly = true;
             this.dgvFacturas.Size = new System.Drawing.Size(648, 225);
             this.dgvFacturas.TabIndex = 69;
+            this.dgvFacturas.SelectionChanged += new System.EventHandler(this.dgvFacturas_SelectionChanged);
             // 
             // btnExportarFacturaPdf
             // 

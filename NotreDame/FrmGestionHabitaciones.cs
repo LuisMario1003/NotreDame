@@ -108,6 +108,10 @@ namespace NotreDame
 
         private void btnAgregarHabitacion_Click(object sender, EventArgs e)
         {
+            if (!ValidarCamposHabitaciones()) 
+            { 
+                return; 
+            }
             Habitacion habitacion = new Habitacion
             {
                 CodigoHabitacion = txtCodigoHabitacion.Text,
@@ -159,6 +163,40 @@ namespace NotreDame
                 MessageBox.Show("Por favor, seleccione una habitación para eliminar.");
             }
         }
+
+        private bool ValidarCamposHabitaciones()
+        {
+            if (string.IsNullOrWhiteSpace(txtCodigoHabitacion.Text))
+            {
+                MessageBox.Show("Por favor, ingrese un código de habitación.");
+                txtCodigoHabitacion.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtNumero.Text))
+            {
+                MessageBox.Show("Por favor, ingrese un número de habitación.");
+                txtNumero.Focus();
+                return false;
+            }
+
+            if (cbEstado.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor, seleccione un estado.");
+                cbEstado.Focus();
+                return false;
+            }
+
+            if (cbCategoria.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor, seleccione una categoría.");
+                cbCategoria.Focus();
+                return false;
+            }
+
+            return true;
+        }
+
 
         private void lblHabitaciones_MouseEnter(object sender, EventArgs e)
         {

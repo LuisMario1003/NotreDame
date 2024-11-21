@@ -445,6 +445,7 @@
             this.dgvClientes.ReadOnly = true;
             this.dgvClientes.Size = new System.Drawing.Size(750, 250);
             this.dgvClientes.TabIndex = 66;
+            this.dgvClientes.SelectionChanged += new System.EventHandler(this.dgvClientes_SelectionChanged);
             // 
             // pictureBox1
             // 

@@ -22,6 +22,7 @@ namespace NotreDame.BLL
                 reserva.MontoTotal = dias * habitacion.Categoria.Precio;
             }
             _reservaDAL.AgregarReserva(reserva);
+            CambiarEstadoHabitacion(reserva.HabitacionID, "Ocupado");
         }
 
         public List<Reserva> ObtenerReservas()
@@ -42,6 +43,10 @@ namespace NotreDame.BLL
         public void EliminarReserva(int reservaID)
         {
             _reservaDAL.EliminarReserva(reservaID);
+        }
+        public void CambiarEstadoHabitacion(int habitacionID, string nuevoEstado)
+        {
+            _habitacionDAL.CambiarEstado(habitacionID, nuevoEstado);
         }
 
     }

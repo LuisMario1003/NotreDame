@@ -426,6 +426,7 @@
             this.dgvHabitaciones.ReadOnly = true;
             this.dgvHabitaciones.Size = new System.Drawing.Size(746, 233);
             this.dgvHabitaciones.TabIndex = 66;
+            this.dgvHabitaciones.SelectionChanged += new System.EventHandler(this.dgvHabitaciones_SelectionChanged);
             // 
             // pictureBox1
             // 

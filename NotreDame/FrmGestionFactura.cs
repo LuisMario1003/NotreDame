@@ -110,7 +110,10 @@ namespace NotreDame
 
         private void btnAgregarFactura_Click(object sender, EventArgs e)
         {
-
+            if (!ValidarCamposFacturacion())
+            { 
+                return; 
+            }
             List<int> serviciosSeleccionados = new List<int>();
             foreach (var item in clbServicios.CheckedItems)
             {
@@ -184,6 +187,23 @@ namespace NotreDame
             {
                 clbServicios.SetItemCheckState(i, CheckState.Unchecked);
             }
+        }
+        private bool ValidarCamposFacturacion()
+        {
+            if (string.IsNullOrWhiteSpace(txtCodigoFactura.Text))
+            {
+                MessageBox.Show("Por favor, ingrese un código de factura.");
+                txtCodigoFactura.Focus();
+                return false;
+            }
+
+            if (cbReserva.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor, seleccione una reserva.");
+                cbReserva.Focus();
+                return false;
+            }
+            return true;
         }
 
         private void txtBuscarCodigoFactura_TextChanged(object sender, EventArgs e)

@@ -432,6 +432,7 @@
             this.dgvReservas.ReadOnly = true;
             this.dgvReservas.Size = new System.Drawing.Size(659, 255);
             this.dgvReservas.TabIndex = 68;
+            this.dgvReservas.SelectionChanged += new System.EventHandler(this.dgvReservas_SelectionChanged);
             // 
             // label9
             // 

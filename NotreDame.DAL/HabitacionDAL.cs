@@ -101,6 +101,19 @@ namespace NotreDame.DAL
                 }
             }
         }
-
+        public void CambiarEstado(int habitacionID, string nuevoEstado)
+        {
+            using (var connection = ConexionDB.GetConnection())
+            {
+                connection.Open();
+                string query = "UPDATE Habitacion SET Estado = @NuevoEstado WHERE HabitacionID = @HabitacionID";
+                using (var command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@NuevoEstado", nuevoEstado);
+                    command.Parameters.AddWithValue("@HabitacionID", habitacionID);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

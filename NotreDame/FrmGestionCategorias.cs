@@ -88,6 +88,10 @@ namespace NotreDame
 
         private void btnGuardarCategoria_Click(object sender, EventArgs e)
         {
+            if (!ValidarCamposCategorias()) 
+            { 
+                return; 
+            }
             Categoria categoria = new Categoria
             {
                 Nombre = txtNombre.Text,
@@ -139,6 +143,25 @@ namespace NotreDame
         {
             txtPrecio.Clear();
             txtNombre.Clear();
+        }
+
+        private bool ValidarCamposCategorias()
+        {
+            if (string.IsNullOrWhiteSpace(txtPrecio.Text))
+            {
+                MessageBox.Show("Por favor, ingrese un código de categoría.");
+                txtPrecio.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                MessageBox.Show("Por favor, ingrese un nombre de categoría.");
+                txtNombre.Focus();
+                return false;
+            }
+
+            return true;
         }
 
         private void lblHabitaciones_MouseEnter(object sender, EventArgs e)

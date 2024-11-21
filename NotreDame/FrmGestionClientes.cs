@@ -92,13 +92,10 @@ namespace NotreDame
 
         private void btnGuardarCliente_Click(object sender, EventArgs e)
         {
-            //Cliente cliente = new Cliente 
-            //{ 
-            //    Nombre = txtNombre.Text, 
-            //    Telefono = txtTelefono.Text, 
-            //    Genero = cbGenero.SelectedItem.ToString(), 
-            //    Cedula = txtCedula.Text 
-            //}; 
+            if (!ValidarCampos()) 
+            { 
+                return; 
+            }
             string cedula = txtCedula.Text.Trim(); 
             string nombre = txtNombre.Text.Trim(); 
             string telefono = txtTelefono.Text.Trim(); 
@@ -169,6 +166,40 @@ namespace NotreDame
             txtTelefono.Clear(); 
             cbGenero.SelectedIndex = -1; 
         }
+
+        private bool ValidarCampos()
+        {
+            if (string.IsNullOrWhiteSpace(txtCedula.Text))
+            {
+                MessageBox.Show("Por favor, ingrese una cédula.");
+                txtCedula.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                MessageBox.Show("Por favor, ingrese un nombre.");
+                txtNombre.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtTelefono.Text) || !System.Text.RegularExpressions.Regex.IsMatch(txtTelefono.Text, @"^\d{10}$"))
+            {
+                MessageBox.Show("Por favor, ingrese un número de teléfono válido de 10 dígitos.");
+                txtTelefono.Focus();
+                return false;
+            }
+
+            if (cbGenero.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor, seleccione un género.");
+                cbGenero.Focus();
+                return false;
+            }
+
+            return true;
+        }
+
 
         private void lblHabitaciones_MouseEnter(object sender, EventArgs e)
         {

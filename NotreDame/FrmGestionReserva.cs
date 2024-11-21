@@ -111,6 +111,10 @@ namespace NotreDame
 
         private void btnAgregarReserva_Click(object sender, EventArgs e)
         {
+            if (!ValidarCamposReservas()) 
+            { 
+                return; 
+            }
             Reserva reserva = new Reserva
             {
                 CodigoReserva = txtCodigoReserva.Text,
@@ -172,6 +176,39 @@ namespace NotreDame
             cbHabitacion.SelectedIndex = -1;
             dtpFechaInicio.Value = DateTime.Now;
             dtpFechaFin.Value = DateTime.Now;
+        }
+
+        private bool ValidarCamposReservas()
+        {
+            if (string.IsNullOrWhiteSpace(txtCodigoReserva.Text))
+            {
+                MessageBox.Show("Por favor, ingrese un código de reserva.");
+                txtCodigoReserva.Focus();
+                return false;
+            }
+
+            if (cbCliente.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor, seleccione un cliente.");
+                cbCliente.Focus();
+                return false;
+            }
+
+            if (cbHabitacion.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor, seleccione una habitación.");
+                cbHabitacion.Focus();
+                return false;
+            }
+
+            if (dtpFechaInicio.Value >= dtpFechaFin.Value)
+            {
+                MessageBox.Show("La fecha de inicio debe ser anterior a la fecha de fin.");
+                dtpFechaInicio.Focus();
+                return false;
+            }
+
+            return true;
         }
 
 
