@@ -12,7 +12,7 @@ namespace NotreDame.DAL
     {
         public void AgregarCategoria(Categoria categoria)
         {
-            using (var connection = DatabaseHelper.GetConnection())
+            using (var connection = ConexionDB.GetConnection())
             {
                 connection.Open();
                 using (var command = new MySqlCommand("INSERT INTO Categoria (Nombre, Precio) VALUES (@Nombre, @Precio)", connection))
@@ -27,7 +27,7 @@ namespace NotreDame.DAL
         public List<Categoria> ObtenerCategorias()
         {
             List<Categoria> categorias = new List<Categoria>();
-            using (var connection = DatabaseHelper.GetConnection())
+            using (var connection = ConexionDB.GetConnection())
             {
                 connection.Open();
                 using (var command = new MySqlCommand("SELECT * FROM Categoria", connection))
@@ -52,7 +52,7 @@ namespace NotreDame.DAL
         public Categoria ObtenerCategoriaPorId(int categoriaID)
         {
             Categoria categoria = null;
-            using (var connection = DatabaseHelper.GetConnection())
+            using (var connection = ConexionDB.GetConnection())
             {
                 connection.Open();
                 using (var command = new MySqlCommand("SELECT * FROM Categoria WHERE CategoriaID = @CategoriaID", connection))
@@ -77,7 +77,7 @@ namespace NotreDame.DAL
 
         public void ActualizarCategoria(Categoria categoria)
         {
-            using (var connection = DatabaseHelper.GetConnection())
+            using (var connection = ConexionDB.GetConnection())
             {
                 connection.Open();
                 using (var command = new MySqlCommand("UPDATE Categoria SET Nombre = @Nombre, Precio = @Precio WHERE CategoriaID = @CategoriaID", connection))
@@ -92,7 +92,7 @@ namespace NotreDame.DAL
 
         public void EliminarCategoria(int categoriaID)
         {
-            using (var connection = DatabaseHelper.GetConnection())
+            using (var connection = ConexionDB.GetConnection())
             {
                 connection.Open();
                 using (var command = new MySqlCommand("DELETE FROM Categoria WHERE CategoriaID = @CategoriaID", connection))

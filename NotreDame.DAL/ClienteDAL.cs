@@ -13,23 +13,33 @@ namespace NotreDame.DAL
     {
         public void AgregarCliente(Cliente cliente) 
         { 
-            using (var connection = DatabaseHelper.GetConnection()) 
-            { 
-                connection.Open();
-                using (var command = new MySqlCommand("INSERT INTO Cliente (Nombre, Telefono, Genero, Cedula) VALUES (@Nombre, @Telefono, @Genero, @Cedula)", connection)) 
+            using (var connection = ConexionDB.GetConnection()) 
+            {
+                connection.Open(); 
+                string query = "INSERT INTO Cliente (Cedula, Nombre, Telefono, Genero) VALUES (@Cedula, @Nombre, @Telefono, @Genero)"; 
+                using (var command = new MySqlCommand(query, connection)) 
                 { 
-                    command.Parameters.AddWithValue("@Nombre", cliente.Nombre); 
-                    command.Parameters.AddWithValue("@Telefono", cliente.Telefono);
+                    command.Parameters.AddWithValue("@Cedula", cliente.Cedula); 
+                    command.Parameters.AddWithValue("@Nombre", cliente.Nombre);
+                    command.Parameters.AddWithValue("@Telefono", cliente.Telefono); 
                     command.Parameters.AddWithValue("@Genero", cliente.Genero);
-                    command.Parameters.AddWithValue("@Cedula", cliente.Cedula);
                     command.ExecuteNonQuery(); 
                 }
+                //connection.Open();
+                //using (var command = new MySqlCommand("INSERT INTO Cliente (Nombre, Telefono, Genero, Cedula) VALUES (@Nombre, @Telefono, @Genero, @Cedula)", connection)) 
+                //{ 
+                //    command.Parameters.AddWithValue("@Nombre", cliente.Nombre); 
+                //    command.Parameters.AddWithValue("@Telefono", cliente.Telefono);
+                //    command.Parameters.AddWithValue("@Genero", cliente.Genero);
+                //    command.Parameters.AddWithValue("@Cedula", cliente.Cedula);
+                //    command.ExecuteNonQuery(); 
+                //}
             }
         }
         public DataTable ObtenerClientes()
         {
             DataTable clientesTable = new DataTable();
-            using (var connection = DatabaseHelper.GetConnection())
+            using (var connection = ConexionDB.GetConnection())
             {
                 connection.Open();
                 string query = "SELECT * FROM Cliente";
@@ -46,7 +56,7 @@ namespace NotreDame.DAL
 
         public void ActualizarCliente(Cliente cliente) 
         { 
-            using (var connection = DatabaseHelper.GetConnection()) 
+            using (var connection = ConexionDB.GetConnection()) 
             { 
                 connection.Open(); 
                 using (var command = new MySqlCommand("UPDATE Cliente SET Nombre = @Nombre, Telefono = @Telefono, Genero = @Genero, Cedula = @Cedula WHERE ClienteID = @ClienteID", connection)) 
@@ -63,7 +73,7 @@ namespace NotreDame.DAL
 
         public void EliminarCliente(int clienteID) 
         { 
-            using (var connection = DatabaseHelper.GetConnection()) 
+            using (var connection = ConexionDB.GetConnection()) 
             { 
                 connection.Open(); 
                 using (var command = new MySqlCommand("DELETE FROM Cliente WHERE ClienteID = @ClienteID", connection)) 

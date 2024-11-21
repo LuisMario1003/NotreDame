@@ -127,6 +127,7 @@ namespace NotreDame
 
             _facturaBLL.RegistrarFactura(factura, serviciosSeleccionados);
             MessageBox.Show("Factura registrada exitosamente.");
+            LimpiarCampos();
             CargarFacturas();
         }
 
@@ -152,6 +153,7 @@ namespace NotreDame
 
                 _facturaBLL.ActualizarFactura(factura, serviciosSeleccionados);
                 MessageBox.Show("Factura actualizada exitosamente.");
+                LimpiarCampos();
                 CargarFacturas();
             }
             else

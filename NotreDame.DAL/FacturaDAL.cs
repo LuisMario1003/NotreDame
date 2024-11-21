@@ -13,7 +13,7 @@ namespace NotreDame.DAL
     {
         public void AgregarFactura(Factura factura, List<int> serviciosSeleccionados)
         {
-            using (var connection = DatabaseHelper.GetConnection())
+            using (var connection = ConexionDB.GetConnection())
             {
                 connection.Open();
                 using (var command = new MySqlCommand("INSERT INTO Factura (CodigoFactura, ReservaID, Fecha, MontoTotal) VALUES (@CodigoFactura, @ReservaID, @Fecha, @MontoTotal)", connection))
@@ -41,7 +41,7 @@ namespace NotreDame.DAL
         public DataTable ObtenerFacturas()
         {
             DataTable facturasTable = new DataTable();
-            using (var connection = DatabaseHelper.GetConnection())
+            using (var connection = ConexionDB.GetConnection())
             {
                 connection.Open();
                 string query = "SELECT * FROM Factura";
@@ -58,7 +58,7 @@ namespace NotreDame.DAL
         public Factura ObtenerFacturaPorId(int facturaID)
         {
             Factura factura = null;
-            using (var connection = DatabaseHelper.GetConnection())
+            using (var connection = ConexionDB.GetConnection())
             {
                 connection.Open();
                 string query = @"
@@ -112,7 +112,7 @@ namespace NotreDame.DAL
 
         public void ActualizarFactura(Factura factura, List<int> serviciosSeleccionados)
         {
-            using (var connection = DatabaseHelper.GetConnection())
+            using (var connection = ConexionDB.GetConnection())
             {
                 connection.Open();
                 using (var command = new MySqlCommand("UPDATE Factura SET CodigoFactura = @CodigoFactura, ReservaID = @ReservaID, Fecha = @Fecha, MontoTotal = @MontoTotal WHERE FacturaID = @FacturaID", connection))
@@ -145,7 +145,7 @@ namespace NotreDame.DAL
 
         public void EliminarFactura(int facturaID)
         {
-            using (var connection = DatabaseHelper.GetConnection())
+            using (var connection = ConexionDB.GetConnection())
             {
                 connection.Open();
                 using (var command = new MySqlCommand("DELETE FROM FacturaServicioAdicional WHERE FacturaID = @FacturaID", connection))
@@ -164,7 +164,7 @@ namespace NotreDame.DAL
         public List<ServicioAdicional> ObtenerServiciosAdicionalesPorFacturaId(int facturaID)
         {
             List<ServicioAdicional> servicios = new List<ServicioAdicional>();
-            using (var connection = DatabaseHelper.GetConnection())
+            using (var connection = ConexionDB.GetConnection())
             {
                 connection.Open();
                 string query = @"

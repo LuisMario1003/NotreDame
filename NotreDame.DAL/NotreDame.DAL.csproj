@@ -95,7 +95,7 @@
   <ItemGroup>
     <Compile Include="CategoriaDAL.cs" />
     <Compile Include="ClienteDAL.cs" />
-    <Compile Include="DatabaseHelper.cs" />
+    <Compile Include="ConexionDB.cs" />
     <Compile Include="FacturaDAL.cs" />
     <Compile Include="HabitacionDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

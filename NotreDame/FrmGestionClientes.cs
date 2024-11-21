@@ -92,14 +92,26 @@ namespace NotreDame
 
         private void btnGuardarCliente_Click(object sender, EventArgs e)
         {
+            //Cliente cliente = new Cliente 
+            //{ 
+            //    Nombre = txtNombre.Text, 
+            //    Telefono = txtTelefono.Text, 
+            //    Genero = cbGenero.SelectedItem.ToString(), 
+            //    Cedula = txtCedula.Text 
+            //}; 
+            string cedula = txtCedula.Text.Trim(); 
+            string nombre = txtNombre.Text.Trim(); 
+            string telefono = txtTelefono.Text.Trim(); 
+            string genero = cbGenero.SelectedItem?.ToString(); 
+
             Cliente cliente = new Cliente 
             { 
-                Nombre = txtNombre.Text, 
-                Telefono = txtTelefono.Text, 
-                Genero = cbGenero.SelectedItem.ToString(), 
-                Cedula = txtCedula.Text 
-            }; 
-            _clienteBLL.RegistrarCliente(cliente); 
+                Cedula = cedula, 
+                Nombre = nombre, 
+                Telefono = telefono, 
+                Genero = genero 
+            };
+            _clienteBLL.RegistrarCliente(cliente);
             MessageBox.Show("Cliente registrado exitosamente.");
             LimpiarCampos();
             CargarClientes();

@@ -12,7 +12,7 @@ namespace NotreDame.DAL
     {
         public void AgregarServicioAdicional(ServicioAdicional servicio)
         {
-            using (var connection = DatabaseHelper.GetConnection())
+            using (var connection = ConexionDB.GetConnection())
             {
                 connection.Open();
                 using (var command = new MySqlCommand("INSERT INTO ServicioAdicional (CodigoServicio, Nombre, Precio) VALUES (@CodigoServicio, @Nombre, @Precio)", connection))
@@ -28,7 +28,7 @@ namespace NotreDame.DAL
         public List<ServicioAdicional> ObtenerServiciosAdicionales()
         {
             List<ServicioAdicional> servicios = new List<ServicioAdicional>();
-            using (var connection = DatabaseHelper.GetConnection())
+            using (var connection = ConexionDB.GetConnection())
             {
                 connection.Open();
                 using (var command = new MySqlCommand("SELECT * FROM ServicioAdicional", connection))
@@ -54,7 +54,7 @@ namespace NotreDame.DAL
         public ServicioAdicional ObtenerServicioAdicionalPorId(int servicioID)
         {
             ServicioAdicional servicio = null;
-            using (var connection = DatabaseHelper.GetConnection())
+            using (var connection = ConexionDB.GetConnection())
             {
                 connection.Open();
                 using (var command = new MySqlCommand("SELECT * FROM ServicioAdicional WHERE ServicioID = @ServicioID", connection))
@@ -80,7 +80,7 @@ namespace NotreDame.DAL
 
         public void ActualizarServicioAdicional(ServicioAdicional servicio)
         {
-            using (var connection = DatabaseHelper.GetConnection())
+            using (var connection = ConexionDB.GetConnection())
             {
                 connection.Open();
                 using (var command = new MySqlCommand("UPDATE ServicioAdicional SET CodigoServicio = @CodigoServicio, Nombre = @Nombre, Precio = @Precio WHERE ServicioID = @ServicioID", connection))
@@ -96,7 +96,7 @@ namespace NotreDame.DAL
 
         public void EliminarServicioAdicional(int servicioID)
         {
-            using (var connection = DatabaseHelper.GetConnection())
+            using (var connection = ConexionDB.GetConnection())
             {
                 connection.Open();
                 using (var command = new MySqlCommand("DELETE FROM ServicioAdicional WHERE ServicioID = @ServicioID", connection))

@@ -335,7 +335,6 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(192, 33);
             this.txtTelefono.TabIndex = 59;
-            this.txtTelefono.Text = "\r\njuan";
             // 
             // label9
             // 

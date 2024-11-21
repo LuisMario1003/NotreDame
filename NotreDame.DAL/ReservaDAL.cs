@@ -12,7 +12,7 @@ namespace NotreDame.DAL
     {
         public void AgregarReserva(Reserva reserva)
         {
-            using (var connection = DatabaseHelper.GetConnection())
+            using (var connection = ConexionDB.GetConnection())
             {
                 connection.Open();
                 using (var command = new MySqlCommand("INSERT INTO Reserva (CodigoReserva, ClienteID, HabitacionID, FechaInicio, FechaFin, MontoTotal) VALUES (@CodigoReserva, @ClienteID, @HabitacionID, @FechaInicio, @FechaFin, @MontoTotal)", connection))
@@ -31,7 +31,7 @@ namespace NotreDame.DAL
         public List<Reserva> ObtenerReservas()
         {
             List<Reserva> reservas = new List<Reserva>();
-            using (var connection = DatabaseHelper.GetConnection())
+            using (var connection = ConexionDB.GetConnection())
             {
                 connection.Open();
                 using (var command = new MySqlCommand("SELECT * FROM Reserva", connection))
@@ -60,7 +60,7 @@ namespace NotreDame.DAL
         public Reserva ObtenerReservaPorId(int reservaID)
         {
             Reserva reserva = null;
-            using (var connection = DatabaseHelper.GetConnection())
+            using (var connection = ConexionDB.GetConnection())
             {
                 connection.Open();
                 using (var command = new MySqlCommand("SELECT * FROM Reserva WHERE ReservaID = @ReservaID", connection))
@@ -89,7 +89,7 @@ namespace NotreDame.DAL
 
         public void ActualizarReserva(Reserva reserva)
         {
-            using (var connection = DatabaseHelper.GetConnection())
+            using (var connection = ConexionDB.GetConnection())
             {
                 connection.Open();
                 using (var command = new MySqlCommand("UPDATE Reserva SET CodigoReserva = @CodigoReserva, ClienteID = @ClienteID, HabitacionID = @HabitacionID, FechaInicio = @FechaInicio, FechaFin = @FechaFin, MontoTotal = @MontoTotal WHERE ReservaID = @ReservaID", connection))
@@ -108,7 +108,7 @@ namespace NotreDame.DAL
 
         public void EliminarReserva(int reservaID)
         {
-            using (var connection = DatabaseHelper.GetConnection())
+            using (var connection = ConexionDB.GetConnection())
             {
                 connection.Open();
                 using (var command = new MySqlCommand("DELETE FROM Reserva WHERE ReservaID = @ReservaID", connection))

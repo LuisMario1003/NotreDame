@@ -13,7 +13,7 @@ namespace NotreDame.DAL
     {
         public void AgregarHabitacion(Habitacion habitacion)
         {
-            using (var connection = DatabaseHelper.GetConnection())
+            using (var connection = ConexionDB.GetConnection())
             {
                 connection.Open();
                 using (var command = new MySqlCommand("INSERT INTO Habitacion (CodigoHabitacion, Numero, Estado, CategoriaID) VALUES (@CodigoHabitacion, @Numero, @Estado, @CategoriaID)", connection))
@@ -29,7 +29,7 @@ namespace NotreDame.DAL
         public DataTable ObtenerHabitaciones()
         {
             DataTable habitacionesTable = new DataTable();
-            using (var connection = DatabaseHelper.GetConnection())
+            using (var connection = ConexionDB.GetConnection())
             {
                 connection.Open();
                 string query = "SELECT * FROM Habitacion";
@@ -46,7 +46,7 @@ namespace NotreDame.DAL
         public Habitacion ObtenerHabitacionPorId(int habitacionID)
         {
             Habitacion habitacion = null;
-            using (var connection = DatabaseHelper.GetConnection())
+            using (var connection = ConexionDB.GetConnection())
             {
                 connection.Open();
                 using (var command = new MySqlCommand("SELECT * FROM Habitacion WHERE HabitacionID = @HabitacionID", connection))
@@ -74,7 +74,7 @@ namespace NotreDame.DAL
 
         public void ActualizarHabitacion(Habitacion habitacion)
         {
-            using (var connection = DatabaseHelper.GetConnection())
+            using (var connection = ConexionDB.GetConnection())
             {
                 connection.Open();
                 using (var command = new MySqlCommand("UPDATE Habitacion SET CodigoHabitacion = @CodigoHabitacion, Numero = @Numero, Estado = @Estado, CategoriaID = @CategoriaID WHERE HabitacionID = @HabitacionID", connection))
@@ -91,7 +91,7 @@ namespace NotreDame.DAL
 
         public void EliminarHabitacion(int habitacionID)
         {
-            using (var connection = DatabaseHelper.GetConnection())
+            using (var connection = ConexionDB.GetConnection())
             {
                 connection.Open();
                 using (var command = new MySqlCommand("DELETE FROM Habitacion WHERE HabitacionID = @HabitacionID", connection))

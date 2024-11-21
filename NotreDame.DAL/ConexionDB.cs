@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NotreDame.DAL
 {
-    public class DatabaseHelper
+    public class ConexionDB
     {
         private const string ConnectionString = "Server=localhost;Database=NotreDameDB;Uid=root;Pwd=1003;"; 
         public static MySqlConnection GetConnection() 
